@@ -22,12 +22,22 @@ export default function Home() {
         setListBook(data);
         setListLibrary(data);
       }catch{
-        
+
         setErrorFetch(true);
       }
     }
       getBook();
   }, []);
+
+  const searchTitle = (title) => {
+    setSearch(title);
+    if(title.trim() === ""){
+      setListBook(listLibrary);
+      return
+    }
+    const newList = listBook.filter((book) => book.titulo.toUpperCase().trim().includes(search.toUpperCase().trim()))
+    setListBook(newList);
+  }
 
   if(errorFetch == true){
     return <ErrorFetch/>
@@ -43,6 +53,10 @@ export default function Home() {
 
   return (
     <main>
+      <div>
+        <input type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
+      </div>
+
       {listBook.map((books) => 
         <div>
           <Image 
