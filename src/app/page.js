@@ -1,8 +1,9 @@
 'use client'
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import "./styles.css";
+import Image from "next/image";
 import Link from "next/link";
+import Carregando from "./components/Carregando";
 
 export default function Home() {
 
@@ -25,6 +26,13 @@ export default function Home() {
       getBook();
   }, []);
 
+  if(listLibrary[0] == null){
+    return(
+      <main>
+        <Carregando/>
+      </main>
+    )
+  }
 
   return (
     <main>
