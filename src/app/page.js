@@ -18,9 +18,11 @@ export default function Home() {
       try{
         const response = await fetch("http://localhost:3000/api");
         const data = await response.json();
+
         setListBook(data);
         setListLibrary(data);
       }catch{
+        
         setErrorFetch(true);
       }
     }
