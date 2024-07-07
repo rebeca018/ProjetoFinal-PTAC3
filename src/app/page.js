@@ -4,6 +4,7 @@ import "./styles.css";
 import Image from "next/image";
 import Link from "next/link";
 import Carregando from "./components/Carregando";
+import ErrorFetch from "./components/ErrorFetch";
 
 export default function Home() {
 
@@ -25,6 +26,10 @@ export default function Home() {
     }
       getBook();
   }, []);
+
+  if(errorFetch == true){
+    return <ErrorFetch/>
+  }
 
   if(listLibrary[0] == null){
     return(
