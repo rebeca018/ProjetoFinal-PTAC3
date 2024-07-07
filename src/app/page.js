@@ -41,7 +41,7 @@ export default function Home() {
           <p>{books.preco}</p> 
 
           <Link href={`/book/${books.id}`}>
-            Ver livro
+              Ver livro
           </Link>
         </div>
       )}
