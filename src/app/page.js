@@ -97,28 +97,31 @@ export default function Home() {
   }
 
   return (
-    <main>
-      <div>
-        <input type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
-        <button onClick={ordenandoAz}>A-Z</button>
-        <button onClick={ordenandoZa}>Z-A</button>
-        <button onClick={precoMenor}>Preço: menor para o maior</button>
-        <button onClick={precoMaior}>Preço: maior para o menor</button>
-        <button onClick={ordenandoEditoraAz}>Editora: A-Z</button>
-        <button onClick={ordenandoEditoraZa}>Editora: Z-A</button>
+    <main className={"main"}>
+      <div className={"filtros"}>
+        <input className={"input"} type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
+        <button className={"botao"} onClick={ordenandoAz}>A-Z</button>
+        <button className={"botao"} onClick={ordenandoZa}>Z-A</button>
+        <button className={"botao"} onClick={precoMenor}>Preço: menor para o maior</button>
+        <button className={"botao"} onClick={precoMaior}>Preço: maior para o menor</button>
+        <button className={"botao"} onClick={ordenandoEditoraAz}>Editora: A-Z</button>
+        <button className={"botao"} onClick={ordenandoEditoraZa}>Editora: Z-A</button>
       </div>
 
       {listBook.map((books) => 
-        <div>
+        <div className={"book-card"}>
+          <div className={"book-card-img-container"}>
           <Image 
             width={107}
             height={154}
             src={books.link}
+            clasName={"book-card-img"}
           />
-          <h4>{books.titulo}</h4>
-          <p>{books.autor}</p>
-          <p>{books.editora}</p>
-          <p>{books.preco}</p> 
+          </div>
+          <h4 className={"book-card-h4"}>Título: {books.titulo}</h4>
+          <p className={"book-card-p"}>Autor: {books.autor}</p>
+          <p className={"book-card-p"}>Editora: {books.editora}</p>
+          <p className={"book-card-p"}>R$ {books.preco}</p> 
 
           <Link href={`/book/${books.id}`}>
               Ver livro

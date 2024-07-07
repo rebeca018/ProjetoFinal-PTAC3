@@ -1,41 +1,11 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f5;
-    color: #000000;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.filtros{
-    margin-top: 10px;
-    margin-left: 10px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    width: 1000px;
-}
-
-.input{
-    border-radius: 5px;
-    width: 250px;
-    height: 25px;
-    border-color: #ae92a3;
-}
-
-.botao{
-    border-radius: 5px;
-    background-color: #ae92a3;
-}
-
 .book-card {
     margin: 30px;
     background-color: #ae92a3;
     border: 5px solid #ae92a3;
     display:inline-block;
     overflow: hidden;
-    height: 375px;
-    width: 230px;
+    height: 400px;
+    width: 500px;
     border-radius: 10px;
   
 }
@@ -84,11 +54,5 @@ body {
     margin-left: auto;
     margin-right: auto;
     justify-items: center;
-}
-  
-.book-card button{
-    background-color: #344960;
-    color: #ffffff;
-    float: left;
 }
   

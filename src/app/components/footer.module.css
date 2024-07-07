@@ -1,0 +1,28 @@
+.rodape{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    height: auto;
+    color: #e5faf7;
+    background-color: #7a9c89;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nome{
+    display: flex;
+}
+.nome li {
+    list-style: none;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-end;
+    margin-top: 15px;
+    height: auto;
+    width: 75px;
+    padding: 10px;
+}
