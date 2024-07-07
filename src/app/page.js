@@ -29,6 +29,51 @@ export default function Home() {
       getBook();
   }, []);
 
+  const ordenandoAz = () => {
+    const newList = [...listBook].sort( (a,b) => 
+      a.titulo.localeCompare(b.titulo)
+    );
+    setListBook(newList);
+  }
+
+  const ordenandoZa = () => {
+    let newList = [...listBook].sort( (a,b) => 
+      a.titulo.localeCompare(b.titulo)
+    );
+    newList = newList.reverse();
+    setListBook(newList);
+  }
+  
+  const precoMenor = () => {
+    let newList = [...listBook].sort( (a,b) => 
+      a.preco - b.preco
+    );
+    setListBook(newList);
+  }
+
+  const precoMaior = () => {
+    let newList = [...listBook].sort( (a,b) => 
+      a.preco - b.preco
+    );
+    newList = newList.reverse();
+    setListBook(newList);
+  }
+
+  const ordenandoEditoraAz = () => {
+    const newList = [...listBook].sort( (a,b) => 
+      a.editora.localeCompare(b.editora)
+    );
+    setListBook(newList);
+  }
+
+  const ordenandoEditoraZa = () => {
+    let newList = [...listBook].sort( (a,b) => 
+      a.editora.localeCompare(b.editora)
+    );
+    newList = newList.reverse();
+    setListBook(newList);
+  }
+
   const searchTitle = (title) => {
     setSearch(title);
     if(title.trim() === ""){
@@ -55,6 +100,12 @@ export default function Home() {
     <main>
       <div>
         <input type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
+        <button onClick={ordenandoAz}>A-Z</button>
+        <button onClick={ordenandoZa}>Z-A</button>
+        <button onClick={precoMenor}>Preço: menor para o maior</button>
+        <button onClick={precoMaior}>Preço: maior para o menor</button>
+        <button onClick={ordenandoEditoraAz}>Editora: A-Z</button>
+        <button onClick={ordenandoEditoraZa}>Editora: Z-A</button>
       </div>
 
       {listBook.map((books) => 
