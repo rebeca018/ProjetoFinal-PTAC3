@@ -38,7 +38,11 @@ export default function Home() {
           <h4>{books.titulo}</h4>
           <p>{books.autor}</p>
           <p>{books.editora}</p>
-          <p>{books.preco}</p>
+          <p>{books.preco}</p> 
+
+          <Link href={`/book/${books.id}`}>
+            Ver livro
+          </Link>
         </div>
       )}
     </main>
