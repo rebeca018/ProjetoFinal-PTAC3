@@ -99,15 +99,15 @@ export default function Home() {
   return (
     <main className={"main"}>
       <div className={"f"}>
-      <div className={"filtros"}>
-        <input className={"input"} type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
-        <button className={"botao"} onClick={ordenandoAz}>A-Z</button>
-        <button className={"botao"} onClick={ordenandoZa}>Z-A</button>
-        <button className={"botao"} onClick={precoMenor}>Preço: menor para o maior</button>
-        <button className={"botao"} onClick={precoMaior}>Preço: maior para o menor</button>
-        <button className={"botao"} onClick={ordenandoEditoraAz}>Editora: A-Z</button>
-        <button className={"botao"} onClick={ordenandoEditoraZa}>Editora: Z-A</button>
-      </div>
+        <div className={"filtros"}>
+            <input className={"input"} type="text" value={search} placeholder="Pesquise o livro" onChange={(event) => searchTitle(event.target.value)}/>
+          <button className={"botao"} onClick={ordenandoAz}>A-Z</button>
+          <button className={"botao"} onClick={ordenandoZa}>Z-A</button>
+          <button className={"botao"} onClick={precoMenor}>Preço: menor para o maior</button>
+          <button className={"botao"} onClick={precoMaior}>Preço: maior para o menor</button>
+          <button className={"botao"} onClick={ordenandoEditoraAz}>Editora: A-Z</button>
+          <button className={"botao"} onClick={ordenandoEditoraZa}>Editora: Z-A</button>
+        </div>
       </div>
 
       {listBook.map((books) => 
@@ -125,9 +125,11 @@ export default function Home() {
           <p className={"book-card-p"}>Editora: {books.editora}</p>
           <p className={"book-card-p"}>R$ {books.preco}</p> 
 
-          <Link href={`/book/${books.id}`}>
+        <button className={"button"}>
+          <Link href={`/book/${books.id}`} className={"button-content"}>
               Ver livro
           </Link>
+        </button>  
         </div>
       )}
     </main>
