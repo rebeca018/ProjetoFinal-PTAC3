@@ -120,10 +120,12 @@ export default function Home() {
             clasName={"book-card-img"}
           />
           </div>
-          <h4 className={"book-card-h4"}>Título: {books.titulo}</h4>
-          <p className={"book-card-p"}>Autor: {books.autor}</p>
-          <p className={"book-card-p"}>Editora: {books.editora}</p>
-          <p className={"book-card-p"}>R$ {books.preco}</p> 
+          <div className={"card-details"}>
+            <h4 className={"book-card-h4"}>Título: {books.titulo}</h4>
+            <p className={"book-card-p"}>Autor: {books.autor}</p>
+            <p className={"book-card-p"}>Editora: {books.editora}</p>
+            <p className={"book-card-p"}>R$ {books.preco}</p> 
+          </div>
 
         <button className={"button"}>
           <Link href={`/book/${books.id}`} className={"button-content"}>

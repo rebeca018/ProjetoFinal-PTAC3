@@ -5,20 +5,20 @@ export default async function Book({params}){
     const data = await response.json();
 
     return(
-        <main>
-            <div className={"book-card"}>
+        <main className={styles.main}>
+            <div className={styles.book_card}>
                 <Image
                     width={107}
                     height={154}
                     src={data.link}
-                    className={"book-card-img"}
+                    className={styles.book_card_img}
                 />
-                <h4 className={"book-card-h4"}>{data.titulo}</h4>
-                <p className={"book-card-p"}>Autor: {data.autor}</p>
-                <p className={"book-card-p"}>Editora: {data.editora}</p>
-                <p className={"book-card-p"}>Gênero: {data.genero}</p>
-                <p className={"book-card-p"}>Páginas: {data.paginas}</p>
-                <p className={"book-card-p"}>R$ {data.preco}</p>
+                <h4 className={styles.book_card_h4}>{data.titulo}</h4>
+                <p className={styles.book_card_p}>Autor: {data.autor}</p>
+                <p className={styles.book_card_p}>Editora: {data.editora}</p>
+                <p className={styles.book_card_p}>Gênero: {data.genero}</p>
+                <p className={styles.book_card_p}>Páginas: {data.paginas}</p>
+                <p className={styles.book_card_p}>R$ {data.preco}</p>
             </div>
         </main>
     )
