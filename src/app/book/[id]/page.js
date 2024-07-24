@@ -7,18 +7,23 @@ export default async function Book({params}){
     return(
         <main className={styles.main}>
             <div className={styles.book_card}>
-                <Image
-                    width={107}
-                    height={154}
-                    src={data.link}
-                    className={styles.book_card_img}
-                />
-                <h4 className={styles.book_card_h4}>{data.titulo}</h4>
-                <p className={styles.book_card_p}>Autor: {data.autor}</p>
-                <p className={styles.book_card_p}>Editora: {data.editora}</p>
-                <p className={styles.book_card_p}>Gênero: {data.genero}</p>
-                <p className={styles.book_card_p}>Páginas: {data.paginas}</p>
-                <p className={styles.book_card_p}>R$ {data.preco}</p>
+                <div className={styles.img}>
+                    <Image
+                        width={107}
+                        height={154}
+                        src={data.link}
+                        className={styles.book_card_img}
+                    />
+                </div>
+                
+                <div className={styles.text}>
+                    <h3 className={styles.book_card_h4}>{data.titulo}</h3>
+                    <p className={styles.book_card_p}>Autor: {data.autor}</p>
+                    <p className={styles.book_card_p}>Editora: {data.editora}</p>
+                    <p className={styles.book_card_p}>Gênero: {data.genero}</p>
+                    <p className={styles.book_card_p}>Páginas: {data.paginas}</p>
+                    <p className={styles.book_card_p}>R$ {data.preco}</p>
+                </div>
             </div>
         </main>
     )
